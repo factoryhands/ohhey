@@ -2,44 +2,106 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
-.missed-connections {
-	list-style-type: none;
-	position: absolute;
-	top: 20px;
-	left: -20px;
-	text-align: left;
+.search-input {
+	margin-bottom: 1.2em;
+
+	img {
+		margin-left: 1em;
+	}
 }
 
-.missed-connections li {
+.missed-connections-sidebar {
+	padding: 0;
 	background-color: #fff;
-	width: 360px;
-	height: 50px;
-	padding: 10px 10px 5px 10px;
-	margin: 0px 0px 5px 0px;
-	font-size: 25px;
-	font-weight: bolder;
-	display: table;
-	border-radius: 5px;
+
+	.search-box {
+		text-align: left;
+		margin: 1em 0 0 2.2em;
+	}
+
+	input {
+		border: none;
+    	border-bottom: solid 1px #383838;
+    	height: 56px;
+    	color: #45F4B5;
+    	width: 15em;
+	}
+}
+
+.missed-connections-sort {
+	width: 100%;
+
+	.dropdown {
+		background-color: #38DDF3;
+		list-style: none;
+		text-align: left;
+		padding: .3em 0;
+
+		a {
+			color: #fff;
+		}
+
+		.dropdown-toggle {
+			margin-left: 2.2em;
+		}
+	}
+}
+
+.missed-connections { 
+	list-style-type: none;
+	text-align: left;
+	background-color: #fff;
+	height: 100vh;
+	padding: 0;
+	color: #383838;
+}
+
+.missed-connections { 
+	li {
+		width: 350px;
+		height: 50px;
+		padding: 10px 10px 5px 10px;
+		margin: 0 auto;
+		font-size: 25px;
+		font-weight: bolder;
+		display: table;
+		border-bottom: solid 1px;
+		color: #383838;
+	}
+
+	li.search-box {
+		font-size: 1em;
+		font-weight: 500;
+	}
 }
 
 .missed-connection.body {
-	font-size: 15px;
-	padding: 0px 0px 20px 0px;
-	margin: -10px 10px -10px 0px;
+	font-size: .7em;
+	margin: 10px 10px 10px 0px;
 	font-weight: normal;
 	line-height: 16px;
 }
 
 .missed-connection.date {
-	font-size: 11px;
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px -9px 1px;
-	color: #51C0A6;
+	color: #383838;
 	position: inherit;
+	font-size: .7em;
+	font-weight: normal;
 }
 
 .missed-connection.text-center {
 	position: inherit;
+	color: #383838;
+	font-weight: normal;
+}
+
+.missed-connection.verify {
+	font-weight: normal;
+
+	a {
+		color: #4DF3C2;
+		font-size: .7em;
+	}
 }
 
 .new-missed-connection {

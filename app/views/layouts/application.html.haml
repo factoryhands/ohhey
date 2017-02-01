@@ -5,17 +5,18 @@
   <meta name="keywords" content="love, missed connections, dating, romance, online dating, personals, craigslist">
   %title OH HEY
   = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'
-  = stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lato'
-  = stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lobster+Two:700italic,700'
+  = stylesheet_link_tag    'https://use.typekit.net/ksq5mwp.js'
   = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
   = stylesheet_link_tag    'application', media: 'all'
   = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false'
   = javascript_include_tag 'application'
   = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js'
+  %script{ type: 'text/javascript', src: '//use.typekit.net/yje5ufo.js' }
+  %script{ type: 'text/javascript' } try{Typekit.load();}catch(e){}
 
-  = csrf_meta_tags
+  = csrf_meta_tags 
 %body
-  = render 'layouts/nav'
+  = render 'layouts/nav' 
   .container-fluid
     #map-canvas.google-map-canvas.row
   .text-center

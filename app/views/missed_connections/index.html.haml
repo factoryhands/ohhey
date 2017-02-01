@@ -1,9 +1,32 @@
-%ul.missed-connections
-  - @missed_connections.each do |missed_connection|
-    %li
-      .missed-connection.date
-        = missed_connection.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %B #{Time.now.day.ordinalize}")
-      = link_to missed_connection.title.upcase, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
-      .missed-connection.body
-        = missed_connection.body
-  = will_paginate @missed_connections
+.missed-connections-sidebar.col-md-4
+  .search-box
+    Who found love today?
+    .search-input
+      = text_field_tag :name, nil, :class => "search-query span3", :placeholder => "Address"
+      = image_tag( 'search-icon.svg')
+  .missed-connections-sort
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", "role" => "button", "data-toggle" => "dropdown", "data-target" => "#"} 
+        All Messages
+        %b.caret
+      %ul.dropdown-menu{"role" => "menu"}
+        %li
+          %a{:href => "#link1"} 
+            Dropdown #1
+          %a{:href => "#link2"}
+            Dropdown #2
+          %a{:href => "#link3"}
+            Dropdown #3
+          %a{:href => "#link4"}
+            Dropdown #4
+  %ul.missed-connections
+    - @missed_connections.each do |missed_connection|
+      %li
+        .missed-connection.date
+          = missed_connection.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %B #{Time.now.day.ordinalize}")  
+        = link_to missed_connection.title, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
+        .missed-connection.body
+          = missed_connection.body
+        .missed-connection.verify
+          = link_to 'Its me!' 
+    = will_paginate @missed_connections
